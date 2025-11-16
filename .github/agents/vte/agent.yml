@@ -1,0 +1,7 @@
+name: vte
+display_name: "VTE — Virtual Test Engineer"
+description: "Agent wrapper that points to `.github/agents/vte/prompt.md`."
+prompt: ".github/agents/vte/prompt.md"
+snippets:
+  - "snippets/vte_snippets.code-snippets"
+version: "0.1.0"

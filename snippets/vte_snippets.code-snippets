@@ -1,0 +1,13 @@
+{
+  "VTE: Template Library skeleton": {
+    "prefix": "vte-template",
+    "body": [
+      "# Template Library - ${1:Area}",
+      "\nSummary:\n$2",
+      "\nValidation Rules:\n$3",
+      "\nPublish Flow:\n$4",
+      "\nReferences:\n- ${5:copilot/templates/PRD.md}"
+    ],
+    "description": "Template Library PRD skeleton prompt"
+  }
+}

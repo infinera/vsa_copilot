@@ -1,0 +1,26 @@
+# Node
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Archive and temp
+archive/
+tmp/
+
+# Tools
+tools/*.log

@@ -1,0 +1,14 @@
+{
+  "VTA: Test Harness skeleton": {
+    "prefix": "vta-test",
+    "body": [
+      "# Test Harness - ${1:Suite}",
+      "\nContext:\n$2",
+      "\nDeliverable:\n$3",
+      "\nAssumptions:\n$4",
+      "\nOpen Questions:\n$5",
+      "\nReferences:\n- ${6:copilot/templates/PRD.md}"
+    ],
+    "description": "Test Harness PRD skeleton prompt"
+  }
+}

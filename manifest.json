@@ -4,10 +4,21 @@
   "version": "0.1.0",
   "entry_points": ["vsa","vta","vae","vte"],
   "files": [
-    "prompts/vsa_prompt.md",
-    "prompts/vta_prompt.md",
-    "prompts/vae_prompt.md",
-    "prompts/vte_prompt.md",
-    "snippets/vsa_snippets.code-snippets"
+    ".github/agents/vsa/prompt.md",
+    ".github/agents/vta/prompt.md",
+    ".github/agents/vae/prompt.md",
+    ".github/agents/vte/prompt.md",
+    "snippets/vsa_snippets.code-snippets",
+    "snippets/vta_snippets.code-snippets",
+    "snippets/vae_snippets.code-snippets",
+    "snippets/vte_snippets.code-snippets",
+    "snippets/README.md",
+    "copilot/readme.md",
+    "copilot/templates/PRD.md",
+    "copilot/e2e_vsa.md",
+    ".github/agents/vsa/agent.yml",
+    ".github/agents/vta/agent.yml",
+    ".github/agents/vae/agent.yml",
+    ".github/agents/vte/agent.yml"
   ]
 }

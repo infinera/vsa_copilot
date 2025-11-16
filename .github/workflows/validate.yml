@@ -1,0 +1,25 @@
+name: Validate snippets & agents
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install deps
+        run: |
+          npm init -y
+          npm install js-yaml
+      - name: Run snippet validator
+        run: node tools/validate-snippets.js
+      - name: Run agent validator
+        run: node tools/validate-agents.js
