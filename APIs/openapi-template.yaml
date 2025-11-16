@@ -1,0 +1,86 @@
+openapi: 3.0.3
+info:
+  title: <Service> API
+  version: 1.0.0
+  description: |
+    Short description of the API and its purpose.
+servers:
+  - url: https://api.example.com/v1
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+
+paths:
+  /items:
+    get:
+      summary: List items
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Item'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /items/{id}:
+    get:
+      summary: Get item by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '404':
+          description: Not found
+
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        created_at:
+          type: string
+          format: date-time
