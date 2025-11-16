@@ -1,5 +1,5 @@
 ---
-Copied from `copilot/templates/PRD.md` for agent-local templates.
+Copied from `.github/agents/vae/templates/PRD.md` (agent-local template).
 ---
 
 ```markdown

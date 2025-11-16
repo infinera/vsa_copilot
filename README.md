@@ -22,7 +22,7 @@ Registering Copilot Agents
 	1. Open GitHub -> Settings -> Copilot -> Agents (or the Copilot Agents management UI in your organization).
  2. Choose "Create agent" and provide a `display_name` and short `description`.
  3. Paste the contents of `.github/agents/<name>/agent.yml` or upload the corresponding prompt file when prompted. Ensure the `prompt:` path in `agent.yml` points to the correct `.github/agents/<name>/prompt.md` file.
- 4. Optionally attach snippet files from `snippets/` or reference `copilot/templates/` used by prompts.
+4. Optionally attach snippet files from `snippets/` or reference per-agent templates under `.github/agents/<role>/templates/` used by prompts.
 
 Verification commands (local checks)
 - List agent metadata files:

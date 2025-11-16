@@ -8,7 +8,7 @@ Purpose: give AI coding agents the minimal, actionable orientation so they can b
 - **Primary audience:** prompt authors and agents that generate structured artifacts (PRDs, SRDs, user stories, sprint plans).
 
 2. Search order & grounding
-- When asked to produce deliverables, prefer sources in this order: `.github/agents/<role>/prompt.md`, `snippets/`, `manifest.json`, `README.md`, then any referenced `copilot/` templates mentioned inside prompts.
+- When asked to produce deliverables, prefer sources in this order: `.github/agents/<role>/prompt.md`, `snippets/`, `manifest.json`, `README.md`, then any referenced per-agent templates under `.github/agents/<role>/templates/` mentioned inside prompts.
 - Example: `.github/agents/vsa/prompt.md` explicitly expects outputs grounded by files like `PRD/`, `SRDs/`, `Architecture/` (these may be external to this repo — cite them when present and avoid inventing content).
 
 3. Output shape & ID conventions (use these exactly when producing VSA outputs)

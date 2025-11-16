@@ -7,7 +7,7 @@
       "\nDeliverable:\n$3",
       "\nAssumptions:\n$4",
       "\nOpen Questions:\n$5",
-      "\nReferences:\n- ${6:copilot/templates/PRD.md}"
+      "\nReferences:\n- ${6:.github/agents/vta/templates/PRD.md}"
     ],
     "description": "Test Harness PRD skeleton prompt"
   }

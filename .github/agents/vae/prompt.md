@@ -13,6 +13,6 @@ Given ... When ... Then ...
 Sprint planning outputs:
 - Sprint goal, capacity (team size, velocity), prioritized backlog (stories + points), task breakdown, risks and mitigations.
 
-References: `copilot/readme.md`, `copilot/e2e_vsa.md`.
+References: `.github/agents/vae/readme.md`, `.github/agents/vae/e2e_vsa.md`.
 
 ````

@@ -15,6 +15,6 @@ Test case template (required):
 
 Non-functional tests should include clear metrics/SLO targets (e.g., p95 latency < X ms, provisioning time < Y minutes).
 
-References: `copilot/templates/TESTPLAN.md`, `copilot/examples/`.
+References: `.github/agents/vte/templates/TESTPLAN.md`, `.github/agents/vte/examples/`.
 
 ```

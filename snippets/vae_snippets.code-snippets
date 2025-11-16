@@ -7,7 +7,7 @@
       "\nCapacity:\n$3",
       "\nBacklog:\n$4",
       "\nRisks:\n$5",
-      "\nReferences:\n- ${6:copilot/templates/PRD.md}"
+      "\nReferences:\n- ${6:.github/agents/vae/templates/PRD.md}"
     ],
     "description": "Sprint planning prompt skeleton"
   }

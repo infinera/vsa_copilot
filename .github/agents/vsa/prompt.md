@@ -20,12 +20,12 @@ ID conventions:
 - Document ID format: `<DOCUMENTTYPE>-<FeatureCode>-<NNN>` (e.g. `PRD-CS-001`).
 
 Prompt examples:
-- "Generate PRD for <feature> using PRD at <URL>" → produce full PRD in Markdown following `copilot/templates/PRD.md`.
+- "Generate PRD for <feature> using PRD at <URL>" → produce full PRD in Markdown following `.github/agents/vsa/templates/PRD.md`.
 - "Create SRD for FR-123 from <SRD_URL>" → system context, data model, SRD-FR-### items, and Traceability Matrix.
 
 Fail-safe behavior:
 - If sources are incomplete, return a skeleton + Assumptions + Open Questions. Prefer paraphrase with ID/URL citation; do not invent facts.
 
-References: `copilot/readme.md`, `copilot/e2e_vsa.md`, `copilot/templates/`.
+References: `.github/agents/vsa/readme.md`, `.github/agents/vsa/e2e_vsa.md`, `.github/agents/vsa/templates/`.
 
 ```

@@ -1,5 +1,5 @@
 ---
-Copied from `copilot/templates/PRD.md` for agent-local templates.
+Agent-local PRD template for VTE (do not reference shared copilot templates).
 ---
 
 ```markdown
