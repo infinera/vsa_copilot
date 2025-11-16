@@ -16,19 +16,12 @@ Usage
 Contributions
 - Keep prompts concise and include grounding references where applicable.
 
-Registering Copilot Agents
+Agent documentation
 
-Quick steps:
-- Agent metadata live in `.github/agents/<name>/agent.yml` and point to `.github/agents/<name>/prompt.md` and per-agent snippets/templates.
-- Use the GitHub Copilot Agents UI to create a new agent and paste the contents of the agent's `agent.yml` (or upload `prompt.md`).
+Each agent has a short, per-agent README visible under `.github/agents/<role>/README.md`.
 
-Helper script:
-- Run `./tools/agent-register.sh` to list agents.
-- Run `./tools/agent-register.sh <agent>` to print the agent's `agent.yml` for copy/paste.
-
-Verify:
+Quick view:
 ```bash
 ls -R .github/agents
-./tools/agent-register.sh
-python -m json.tool manifest.json | sed -n '1,240p'
+sed -n '1,120p' .github/agents/vsa/README.md
 ```
