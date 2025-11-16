@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-
-const dir = path.join(__dirname, '..', 'snippets');
+const glob = require('glob');
 let failed = false;
 
 function validateFile(fp) {
@@ -15,20 +14,26 @@ function validateFile(fp) {
   }
 }
 
-const files = fs.readdirSync(dir).filter(f => f.endsWith('.code-snippets'));
+// Search both top-level snippets/ and per-agent snippets folders
+const patterns = [
+  path.join(__dirname, '..', 'snippets', '*.code-snippets'),
+  path.join(__dirname, '..', '.github', 'agents', '*', 'snippets', '*.code-snippets')
+];
+
+const files = patterns.flatMap(p => glob.sync(p));
 if (files.length === 0) {
-  console.error('No snippet files found in snippets/');
+  console.error('No snippet files found in snippets/ or .github/agents/*/snippets/');
   process.exit(1);
 }
 
-files.forEach(f => {
-  const fp = path.join(dir, f);
+files.forEach(fp => {
+  const f = path.basename(fp);
   const err = validateFile(fp);
   if (err) {
-    console.error(`${f}: INVALID JSON — ${err}`);
+    console.error(`${fp}: INVALID JSON — ${err}`);
     failed = true;
   } else {
-    console.log(`${f}: OK`);
+    console.log(`${fp}: OK`);
   }
 });
 
