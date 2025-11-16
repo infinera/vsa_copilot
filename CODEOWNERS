@@ -1,5 +1,5 @@
 # Code owners for vsa_copilot
 # Adjust these GitHub usernames to actual team members as needed
-/prompts/ @infinera/sara-team
-/snippets/ @infinera/sara-team
-/.github/ @infinera/sara-team
+/prompts/ @dnaik-infinera
+/snippets/ @dnaik-infinera
+/.github/ @dnaik-infinera
