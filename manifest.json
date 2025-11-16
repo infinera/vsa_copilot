@@ -12,7 +12,6 @@
     ".github/agents/vta/snippets/vta_snippets.code-snippets",
     ".github/agents/vae/snippets/vae_snippets.code-snippets",
     ".github/agents/vte/snippets/vte_snippets.code-snippets",
-    "snippets/README.md",
     ".github/agents/vsa/templates/PRD.md",
     ".github/agents/vta/templates/OPENAPI.yaml",
     ".github/agents/vae/templates/PRD.md",
