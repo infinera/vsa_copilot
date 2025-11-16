@@ -3,6 +3,6 @@ display_name: "VSA — Virtual System Architect"
 description: "Agent wrapper that points to `.github/agents/vsa/prompt.md` and related snippets/templates. Use this metadata to register a Copilot coding agent."
 prompt: ".github/agents/vsa/prompt.md"
 snippets:
-  - "snippets/vsa_snippets.code-snippets"
+  - ".github/agents/vsa/snippets/vsa_snippets.code-snippets"
 manifest_entry: "vsa"
 version: "0.1.0"
