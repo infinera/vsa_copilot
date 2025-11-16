@@ -1,0 +1,13 @@
+{
+  "name": "vsa_copilot",
+  "description": "Prompts and snippets for VSA, VTA, VAE, VTE users",
+  "version": "0.1.0",
+  "entry_points": ["vsa","vta","vae","vte"],
+  "files": [
+    "prompts/vsa_prompt.md",
+    "prompts/vta_prompt.md",
+    "prompts/vae_prompt.md",
+    "prompts/vte_prompt.md",
+    "snippets/vsa_snippets.code-snippets"
+  ]
+}
