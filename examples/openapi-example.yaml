@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: QuickSearch API
+  version: 1.0.0
+paths:
+  /api/quicksearch:
+    post:
+      summary: Search documents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        title:
+                          type: string
+                        snippet:
+                          type: string
+                        score:
+                          type: number
