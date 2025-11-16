@@ -13,7 +13,6 @@
     "snippets/vae_snippets.code-snippets",
     "snippets/vte_snippets.code-snippets",
     "snippets/README.md",
-    "copilot/readme.md",
     ".github/agents/vsa/templates/PRD.md",
     ".github/agents/vta/templates/OPENAPI.yaml",
     ".github/agents/vae/templates/PRD.md",
