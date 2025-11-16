@@ -1,0 +1,7 @@
+name: vta
+display_name: "VTA — Virtual Test Architect"
+description: "Agent wrapper that points to `.github/agents/vta/prompt.md`."
+prompt: ".github/agents/vta/prompt.md"
+snippets:
+  - "snippets/vta_snippets.code-snippets"
+version: "0.1.0"

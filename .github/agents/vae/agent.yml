@@ -1,0 +1,7 @@
+name: vae
+display_name: "VAE — Virtual Agile Engineer"
+description: "Agent wrapper that points to `.github/agents/vae/prompt.md`."
+prompt: ".github/agents/vae/prompt.md"
+snippets:
+  - "snippets/vae_snippets.code-snippets"
+version: "0.1.0"
