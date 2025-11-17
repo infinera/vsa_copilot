@@ -68,3 +68,17 @@ Use the bundled initializer to copy an agent into a target repository (for quick
 ```
 
 The script copies the agent profile `.md`, `prompt.md`, `agent.yml`, templates, snippets, and `README.md` into the target repo and prints steps to register the agent in the GitHub UI.
+
+Continuous Integration
+- The repository now includes a GitHub Actions workflow `.github/workflows/validate-agents.yml` that runs the validators on `push` and `pull_request` targets for `main`.
+
+PowerShell Helper
+- For Windows users, a PowerShell equivalent is available at `scripts/init-agent.ps1`. Usage (PowerShell):
+
+```powershell
+# dry-run preview
+./scripts/init-agent.ps1 -Agent vsa -Target ../my-project -DryRun
+
+# copy and commit/push
+./scripts/init-agent.ps1 -Agent vsa -Target ../my-project -Git
+```

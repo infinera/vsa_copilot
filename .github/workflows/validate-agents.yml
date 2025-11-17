@@ -1,0 +1,25 @@
+name: Validate Agents
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then npm ci; fi
+      - name: Run agent validators
+        run: |
+          node --version
+          if [ -f tools/validate-agents.js ]; then node tools/validate-agents.js; else echo "No agents validator"; fi
+          if [ -f tools/validate-snippets.js ]; then node tools/validate-snippets.js; else echo "No snippets validator"; fi
