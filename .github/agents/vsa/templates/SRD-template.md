@@ -1,3 +1,4 @@
+<!-- Agent-local copy of SRD template -->
 # System Requirements Document (SRD)
 **Project Name**: [Enter Project Name]  
 **Version**: [vX.X]  
