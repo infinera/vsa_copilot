@@ -21,7 +21,7 @@
     ".github/agents/vsa/templates/Backlog-template.md",
     ".github/agents/vsa/templates/Sprint-plan-template.md",
     ".github/agents/vsa/templates/Ceremonies-checklist.md",
-    ".github/agents/vta/templates/OPENAPI.yaml",
+    ".github/agents/vta/templates/openapi-template.yaml",
     ".github/agents/vae/templates/PRD.md",
     ".github/agents/vte/templates/PRD.md",
     ".github/agents/vte/templates/TESTPLAN.md",
