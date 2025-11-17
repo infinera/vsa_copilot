@@ -55,3 +55,16 @@ Tips
 - Run validators after edits and before creating a PR.
 
 If you want, I can add a tiny CLI script that wraps these prompts and posts them to an MCP server or a mock runner for local testing.
+
+Init script
+Use the bundled initializer to copy an agent into a target repository (for quick bootstrapping):
+
+```bash
+# copy VSA files into a local repo at ../my-project (no git push)
+./scripts/init-agent.sh vsa ../my-project
+
+# copy and auto-commit/push the files into the target repo (use with care)
+./scripts/init-agent.sh vsa ../my-project --git
+```
+
+The script copies the agent profile `.md`, `prompt.md`, `agent.yml`, templates, snippets, and `README.md` into the target repo and prints steps to register the agent in the GitHub UI.
