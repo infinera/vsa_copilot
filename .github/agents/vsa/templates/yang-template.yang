@@ -1,0 +1,10 @@
+module vsa-example-templates {
+  namespace "http://infinera.com/vsa/templates";
+  prefix vset;
+
+  container vsa-example {
+    leaf id {
+      type string;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+module example-templates {
+  namespace "http://example.com/templates";
+  prefix et;
+
+  container example {
+    leaf name {
+      type string;
+    }
+  }
+}
