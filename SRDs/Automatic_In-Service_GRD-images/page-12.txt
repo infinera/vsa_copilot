@@ -1,0 +1,71 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+[| GRD-490 - Getting issue detalls.../ Gr ,tys | ] AINS and Other Feature interaction
+
+The NE shall continue to support the existing features. The features covered in this GRD shall coexist with existing features already supported. There
+shall be no loss of functionality as a result of adding the AINS feature support. The following are the important features identified to have some feature
+interaction that shall be tested and verified
+
+1. LED behavior: No changes to the LED behavior.
+
+2. SWIDB upgrade: The AINS and valid signal time interval values will be backed up and restored per the existing SW/DB upgrade procedure.
+
+3. Protection Switching: The PG creation and TRIB-PTP PU selection per the existing behavior shall continue to be supported. Fault detection and
+protection switching upon the existing triggers continues to be supported when in the AINS enabled state (i.e. when the RemValidSignalTimer is
+active and decrementing). Both 1-port and 2-port protection shall be certified with AINS.
+
+. Diagnostics: Ability to perform diagnostics in maintenance state shall continue to be supported.
+
+. Performance Monitoring: The NE should continue to collect the PM data (real time and historical) when the TRIB-PTP is in the AINS enabled state.
+Further, the PM buckets shall not be marked invalid due to AINS state. The existing rules for marking PM buckets validity shall prevail
+
+6. Equipment Provisioning: The AINS feature defined shall be applicable to all the equipment type where the applicable tributary or line interfaces are
+present. Also, the existing equipment provisioning methodology shall not be changed to support AINS.
+
+. Service Provisioning: The existing methods of creating the manual cross-connects or SNCs shall be used.
+
+. OTN mappings: Where applicable, all type of network mappings shall be supported with deployment scenarios: SNC endpoints with source to
+destination clients as: GBE to GBE, GBE to OTUk, OTUk to OTUK
+9. The SNC masking shall be done for both LOCAL SNC and REMOTE SNCs depending on the TRIB AINS configuration on the corresponding
+
+endpoints.
+
+10. Masking of TRIB, Client, Line/SCG, SCH and SNCs alarms listed in this GRD shall be certified for the multiplexing scenarios.
+
+an
+
+on
+
+6. 6. Information Model for the AINS Feature
+
+NE AttributeName  Access/Role Possible Values Default ~—_Description/Behavior
+AINS RW Disabled This attribute is used to configure the AINS feature on the TRIB or Line/SCG interface.
+
+* Enabled
+
+© Disabled
+ValidSignalTimelnterval RW 107200 minutes 480 minutes | This attribute is used to configure the valid signal timer for the AINS feature on TRIB or Line/SCG interfaces.
+
+‘The value is configurable in 1-minute granularity.
+
+RemValidSignalTimer RO 0107200 minutes NA This attribute is used to display the remaining valid signal timer value.
+
+The value is reported in 1-minute granularity,
+
+7. 7. Reviews
+
+7.1. 7.1. Mandatory Reviewers
+
+Reviewed/Approved Reviewed/Concerns raised, not ready to approve.
+
+Sharfuddin Syed 16 Dee 2020 @<reviewer-name> //<date>
+Nuno Pereira 16 Dec 2020
+Channabasava Yadrami 16 Dec 2020
+
+Unknown User (tstafford) 16 Dec 2020
+Prasanna Jaikrishnamoorthy 16 Dec 2020
+Unknown User (kkasiviswanathan) 16 Dec 2020
+
+7.2. 7.2. Jira Requirement Table
+
+T Key Summary Status Labels

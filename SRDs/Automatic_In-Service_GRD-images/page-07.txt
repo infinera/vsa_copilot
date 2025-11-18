@@ -1,0 +1,47 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+[| GRD-474 - Getting issue detalls... | Sr ,zys | ] No impact to default template when Valid Signal Time Interval is updated on TRIB/Line
+ISCG
+
+The NE shall ensure that changing the ValidSignalTimeinterval on an individual TRIB-PTP or Line-PTP/SCG-PTP shall not cause the value in the
+default template to be changed.
+
+[| GRD-475 - Getting issue details... Gr,tyg | |] No pre-conditions for changing the Valid Signal Time Interval
+
+The NE shall allow changing the ValidSignalTimeinterval value at any time using the default template method or on an individual TRIB-PTP or Line-PTP
+/SCG-PTP irrespective of the state of the TRIB-PTP/Client CTP, Line-PTP/SCG-PTP/SCH CTP, or the value of RemValidSignalTimer. When such a
+change is done on already provisioned TRIB-PTP or Line-PTP/SCG-PTP, and if the RemValidSignalTimer is active (decrementing), the value of
+RemValidSignalTimer shall be set to the new value of ValidSignalTimeinterval immediately.
+
+5.2. 5.2. Fault Management and State Model
+[| GRD-476 - Getting issue details... cr ,~tyg | | Transition into in-service state upon expiry of VS Timer
+
+When the AINS feature is enabled on a TRIB-PTP or Line-PTP/SCG-PTP, the NE shall monitor for the presence of a valid signal on the TRIB-PTP and
+the corresponding Client CTP, or Line-PTP/SCG-PTP and the corresponding Line CTP for the entire duration of Valid Signal Timer before transitioning
+to an in-service state. Depending on the occurrence or absence of a fault before or after timer expires, the following cases shall be supported according
+to the following state diagram:
+
+* Upon expiry of the Valid Signal Timer, if there were no faults detected either on the TRIB-PTP or the corresponding Client CTP, Line-PTP/SCG-
+PTP or the corresponding Line CTP for the entire duration of the timer, the TRIB-PTP and the Client CTP, or the Line-PTP/SCG-PTP and the Line
+CTP shall transition to an “In-Service” state with AINS value set to disabled.
+
+© Ifthe fault condition(s) occurs on the TRIB-PTP or Client CTP, the Line-PTP/SCG-PTP or Line CTP before the Valid Signal Timer expires, the
+TRIB-PTP and the corresponding Client CTP, or the Line-PTP/SCG-PTP and the corresponding Line CTP shall transition to “Out-of-Service” state
+(operational state=disabled) with AINS value set to enabled.
+
+Generic State Diagram for the AINS feature
+
+(utot Service, ANS: No Alarm Reportng
+(Out-of-Service, AINS ‘AINS-CD: No Alarm Rortng  Countng Down
+‘AINS-NR: No lar Rearing Not Ready
+
+In-Service: Alar Reporting Aloued
+(Out of Sericelaintsnance: Aarms Not Mentored
+
+timer e100
+
+The presence of “fault” conditions or “abnormal” conditions or “invalid signal” is defined as the presence of an alarm which causes a Facility Failure (FAF)
+state for the termination point. The FAF state (NE operational state qualifier=Faulted) is an out-of-service state.
+
+The following requirements shall be used for triggering the FAF on TRIB-PTP, Line-PTP/SCG-PTP, Client CTPs, and SCH CTP that results in transition
+into AINS or out of AINS state.

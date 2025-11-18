@@ -1,0 +1,60 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+TRIB AINS enabled TRIB AINS enabled
+SNC
+
+xGBE
+
+xGBE
+
+LOSYNC egress-LOSY?
+
+Alarms Masked |@3 5@ Alarms Maske
+
+Node A Node Z
+
+As depicted in the figure above, the deployment scenario shows two network elements, Node A and Node Z, with 3x100GbE TOMs already provisioned on
+each of the Nodes. The customer wants to add new capacity, with another 100GbE TOM. The goal is to ensure that the bring-up of services does not incur
+any alarms on the network, as it generates unnecessary trouble tickets at the NOC.
+
+In order to achieve this goal, the user simply configures the tributary Port 4 into AINS service, at both Node A and Node Z. If any alarms during the turn-up
+starts to show up on tributary Port 4 or its associated 100GbE client, then it will be masked. Specifically, the LOSYNC at Node A, the egress-LOSYNC at
+Node Z and the Sub-Network Connection (SNC) Fail alarms on Node A and Node Z will be masked. Thus, the network does not show up any alarms
+during the bring-up time, also known as Valid Signal Timer, which is configurable by the user. When the fault conditions, LOSYNC and egress-LOSYNC,
+are handled and fixed, usually by means of attaching a good source of client signal, the Port 4 at Node A and Node Z are bought into service automatically.
+
+Please note that the same deployment scenario can be extended to OTUk transport services, with the only difference that the triggers for valid signal
+determination is based on the OTUk facility failures. In case of Ethernet to OTN adaptation, there is one case worth describing and that is when the client
+signal failure is transmitted to the OTN end when the encapsulated Ethernet client failure is present on the corresponding upstream node. Please see next
+deployment scenarios for details.
+
+2.2.2. 2.2.2. AINS for Ethernet/OTN Adaptation
+
+The Ethernet/OTN Adaptation service comprises of an Ethernet Client Signal on one end and an OTUk Signal on the other end. These scenarios are
+depicted in the following figures for unprotected and protected service scenarios respectively. The main point to bring out from these scenarios is the ability
+to detect and report a Client Signal Failure condition (CSF) on the OTUk hand-off site, which is a result of a corresponding Ethernet Client Signal having a
+facility failure.
+
+In figure below, the unprotected SNC scenario, the CSF condition is detected at Node Z on the TRIB-ODU entity, due to LOSYNC failure of Ethernet Client
+
+at Node A. Since the CSF is representing a client level failure, the AINS feature includes this condition into the invalid signal category. Thus, if AINS is
+enabled on the tributary ports of Node A and Node Z, the alarms/conditions LOSYNC, CSF and SNCFAIL are masked.
+
+Un-protected SNC
+
+xGBE OTUk
+<x ->@ (oe ex
+LOSYNC Ch , |
+
+T-oDU
+
++
+
+OLOS....
+
+Node A Node Z
+C1: CSF condition
+
+The figure below depicts a similar scenario, except that the protected services are deployed. In this scenario, the Ethernet client at Node A does not have
+any outstanding alarm. However, due to an intermediate failure, the CSF is detected/asserted on the Line-ODU entity at Node Z. If the AINS is enabled on
+the tributary port of Node Z, the alarms/conditions CSF and SNCFAIL are masked.

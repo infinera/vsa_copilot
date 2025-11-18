@@ -1,0 +1,62 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+The following are the considerations of this feature for providing the best user experience to our customers.
+1. The purpose of AINS for turning up client services in an “alarm-free state” must be delivered with high quality.
+2. The fault management (Alarm reporting) sub-system has to be robust with predictable, reliable and consistent behavior.
+
+3. A system which is built with a solid fault management solution/otfering becomes a key component for retaining the value proposition as an
+incumbent equipment provider.
+
+5. 5. AINS Requirements
+
+5.1. 5.1. Configuration Management
+
+[| GRD-459 - Getting issue details... St ,tys | ] AINS Support on TRIB interface
+
+The Infinera NE shall support the Automatic In-Service (AINS) provisioning feature on the TRIB-PTP of all the circuit pack types which has a tributary
+interface to the client equipment. Furthermore, the AINS feature shall be supported for both the pre-provisioning and auto-provisioning cases.
+
+[ GRD-460 - Getting issue details... St,~tys _] AINS Support on Line/SCG interface
+
+The Infinera NE shall support the Automatic In-Service (AINS) provisioning feature on the Line-PTP/SCG-PTP of all the circuit pack types which has a
+line interface to the network. Furthermore, the AINS feature shall be supported for both the pre-provisioning and auto-provisioning cases.
+
+The TRIB-PTP and Line-/SCG-PTP are specifically selected as the choice of termination points to support AINS feature because during test and turn-up
+(or troubleshooting) of the client and line signals coming into Infinera network node, the TRIB-PTPs and Line-/SCG-PTPs act as the edge points of the
+network and client boundary. It is to be noted that when the AINS feature is applied to the TRIB-PTP, the corresponding client shall also be placed either in
+the AINS state or in an alarm suppression state.
+
+NOTE: The AINS feature can also be applied to other termination points (OTS, OCG etc.) and equipment types which is not required immediately and can
+
+be supported in the future. If and when this is needed, this GRD will be updated to include the definitions of abnormal conditions on these equipment and
+termination points.
+
+[ GRD-461 - Getting issue details... Statys _] AINS configuration
+
+The NE shall allow the configuration of AINS state on the TRIB-PTP and Line-PTP/SCG-PTP using the attribute “AINS" as defined in the information
+model table.
+
+[| GRD-462 - Getting issue details... cratyg _] AINS default template support
+
+The NE shall allow the management interfaces to provision the AINS configuration specified in GRD-459 and GRD-460 using the default template
+mechanism that is provided on a per NE basis. Changes to the AINS configuration using the default template shall be allowed all the time without any
+preconditions. Furthermore, the changes made to the AINS configuration in the default template will take effect on the TRIB-PTPs and Line-PTP/SCG-
+PTPs that are created subsequently after the change is made to the default template.
+
+NOTE: Changing the AINS configuration on an already provisioned TRIB-PTPs and Line-/SCG-PTPs shall follow the rules as specified in GRD-469.
+[| GRD-463 - Getting issue detalls... | Sr ,tys | ] Overriding the AINS configuration in the default template configuration
+
+In addition to supporting the configuration through the default template, the NE shall allow the configuration of AINS on a per TRIB-PTP and per Line-
+PTP/SCG-PTP basis.
+
+This requirement is used to cover the following two use cases:
+1. When the AINS template value is set to disabled and the user wants to provision a particular TRIB or Line/SCG port using the AINS state.
+2. When the AINS template value is set to enabled, the TRIB or Line/SCG port was earlier brought into service. However, there is a recurring fault
+on the TRIB/Client or Line/SCG port on which the user wants to apply the AINS feature.
+
+NOTE: The AINS feature shall not be limited to just during test and turn-up but can be applied any time on the TRIB or Line/SCG interfaces.
+
+[| GRD-464 - Getting issue details... sratyg | ] Configuration of Valid Signal Timer Value
+
+The NE shall allow the configuration of AINS Valid Signal Timer value on the TRIB-PTP and Line-PTP/SCG-PTP using the attribute
+“ValidSignalTimelnterval” as defined in the information model table. The standard value range-check shall also be supported.

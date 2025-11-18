@@ -1,0 +1,50 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+[| GRD-477 - Getting issue details... | Gr ,tys | ] Facility Failures - Invalid Signal Failures for the TRIB AINS feature
+
+The NE shall use the service-atfecting alarms that contribute to the TRIB-PTP and the Client CTP facilities, and the supporting equipment for declaring
+the signal as “invalid signal”.
+
+For example (may not be a complete list of service-affecting alarms applicable to each facility):
+
+* TRIB-PTP: OLOS, CDR-LOL
+* Client CTPs:
+SONET Client-CTP: ingress/egress LOF, ingress/egress AIS-L
+SDH Client-CTP: ingress/egress LOF, ingress/egress MS-AIS
+GbE Client-CTP: ingress/egress LOSYNC, ingress/egress LF, ingress/egress RF, ingress/egress HIBER, ingress LOA, ingress LOLM
+OTU Client-CTP: ingress/egress LOF, ingress LOM, ingress LOL
+ODU Client-CTP (service-mode=network-wrapper): egress CSF, egress AIS, egress OCI, egress LCK, PLM, TIM
+= Note: As an exception, UCM4 in service-mode=switching considers the specified ODU Client-CTP alarms as invalid signals for AINS.
+FC Client-CTP: ingress/egress LOSYNC, ingress/egress HIBER, ingress/egress LF, ingress/egress RF, ingress LOS, ingress LFA (FEC
+enabled)
+* Equipment (TOM or its supporting equipment; OTM, TIM, LM, TAM, etc.): EQPTFAIL, IMPROPRMVL, EQPTCOMFAIL, PWR-CLASS-
+UNSUPPORTED
+
+[| GRD-478 - Getting issue detalls.../ Sr ,tyg | ] Facility Failures - Invalid Signal Failures for the Line/SCG AINS feature
+
+The NE shall use the following failure conditions that contribute to the Line-PTP/SCG-PTP and the SCH CTP facilities for declaring the signal as “invalid
+signal”.
+
+* Line-PTP/SCG-PTP: OLOS
+* Line CTPs:
+SCH-CTP: ALL-CARRIER-FAIL
+Carrier-CTP (CHM7): COH-LOL, POST-FEC-Q-SIGNAL-FAILURE
+* Equipment (line transceiver equipment or its supporting equipment): EQPTFAIL, IMPROPRMVL
+
+[| GRD-479 - Getting issue detalls.... cr ,tyg | ] Alarm Masking when in AINS enabled state
+
+When the AINS feature is enabled on the TRIB-PTP or Line-PTP/SCG-PTP, any alarms occurring on the TRIB-PTP and its corresponding Client CTP,
+the Line-PTP/SCG-PTP and its corresponding SCH CTP, and the SNC (if present) shall not be reported to the management interfaces.
+
+Note 1: Threshold Crossing Alerts (TCA) are not suppressed or inhibited when AINS is enabled in the GX line of products.
+
+Note 2: Alarms that are managed in the controller card but dependent on the transport card, such as COMM-CHNL-DOWN, are not suppressed or
+inhibited when AINS is enabled in the GX line of products.
+
+When the AINS is enabled and the AINS remaining valid signal timer is decrementing, the data plane traffic is up and running. Only the alarm reporting is
+
+turned off during AINS state.
+
+State Transitions for the Trib-PTP AINS feature
+
+The following figure illustrate the state transitions for the Trib-PTP AINS provisioning.

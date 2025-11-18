@@ -1,0 +1,63 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+[| GRD-465 - Getting issue detalls.../ Gr ,zys | ] Default template support for Valid Signal Timer configuration
+
+The NE shall allow the configuration of ValidSignalTimeinterval specified in GRD-464 using the default template mechanism that is provided on a per
+NE basis. Changes to the ValidSignalTimeinterval configuration using the default template shall be allowed at all times without any pre-conditions.
+Further, the changes made to the ValidSignalTimelnterval configuration in the default template will take effect on the TRIB-PTPs and Line-PTP/SCG-
+PTPs that are created subsequently after the change is made to the default template.
+
+[| GRD-466 - Getting issue details... Gratyg | |] Overtiding the Valid Signal Timer value configuration in the default template
+configuration
+
+In addition to supporting the configuration through the default template, the NE shall allow the configuration of ValidSignalTimelnterval specified in GRD-
+464 on a per TRIB-PTP and per Line-PTP/SCG-PTP basis.
+
+[| GRD-467 - Getting issue detalls...” cr,tyg | ] Retrieval of the Remaining Valid Signal Timer Value
+
+The NE shall support the retrieval of the Time Remaining for the configured valid signal timer to expire. The attribute “RemValidSignalTimer” as defined
+in the information model table shall be used.
+
+In order to get the time remaining for the valid signal timer, the user shall explicitly execute a retrieval operation from the NE, through the management
+interface. There will not be any autonomous notifications (AVCs) sent by the NE for the remaining valid signal timer value.
+
+[| GRD-468 - Getting issue details...’ St,tyg _] Format of Remaining Valid Signal Timer Value
+
+The management interfaces shall support a user-friendly interface for the configuration and display of the timer values in the following format.
+* DD-HH-MM
+DD: Number of days. Values are from 00 to 05 days.
+HH: Number of hours. Values are from 00 to 23.
+‘MM: Number of minutes. Values are from 00 to 59.
+
+Note: The maximum value of the timer shall be 5 days.
+
+[| GRD-469 - Getting issue detalls.../ Gr ,tys | ] No pre-condition for changing AINS configuration between Disabled and Enabled
+
+When performing AINS configuration on an already provisioned TRIB-PTP or Line-PTP/SCG-PTP, the NE shall allow changing the AINS configuration tr
+eely between Disabled and Enabled at any time irrespective of the state of TRIB-PTP or Line-PTP/SCG-PTP or the value of RemValidSignalTimer.
+
+Note: This allows users to disable or enable AINS regardless of fault conditions or states. Enabling AINS without a fault still takes the entity out of
+service, but the supported entities stay in service.
+
+Please note that throughout this document, a Client CTP refers to all the Client CTPs listed in GRD-477, depending on the applicability and deployment
+scenario. The above requirement is used to cover the case where the user wants to disable the AINS feature and start monitoring the faults again.
+
+[| GRD-470 - Getting issue detalls.... Sr ,tys | ] Allow AdminState Lock and Maintenance when AINS is enabled
+
+The NE shall allow a TRIB-PTP or Line-PTP/SCG-PTP which is in AINS state to be configured to the Locked or Maintenance state.
+
+[| GRD-471 - Getting issue detalls.... Gr ,tyg | ] No impact to existing AINS configuration when default template is updated
+
+The NE shall ensure that changing the AINS configuration in the default template shall not cause the change in value of AINS on an already provisioned
+TRIB-PTP or Line-PTP/SCG-PTP.
+
+[| GRD-472 - Getting issue detalls... | Sr ,tys | ] No impact to default template when TRIB/Line/SCG AINS is updated
+
+The NE shall ensure that changing the AINS configuration on an individual TRIB-PTP or Line-PTP/SCG-PTP shall not cause the value in the default
+template to be changed.
+
+[| GRD-473 - Getting issue details... ¢r,tyg | |] No impact to existing AINS Valid Signal Time Interval configuration when default
+template is updated
+
+The NE shall ensure that changing the ValidSignalTimeinterval in the default template shall not cause the change in value of ValidSignalTimelnterval
+already provisioned on the TRIB-PTP or Line-PTP/SCG-PTP.

@@ -1,0 +1,41 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+. Automatic In Service (AINS) GRD
+
+. System State Management GRD
+
+. Glossary and Abbreviations
+
+. [THANOS-10096] AINS Clarifications/Updates - Infinera Jira
+
+OR
+
+2. 2. Introduction
+
+2.1. 2.1. Automatic In-Service (AINS) Provisioning Overview
+
+The AINS (Automatic In-Service) state is used during the provisioning of services in an alarm-free state. It can also be used to troubleshoot a faulty facility
+(termination point) in an alarm-free state. The term “alarm-free state” in AINS means that, during the AINS state, the alarms on the equipment or
+termination point will be masked and not reported to the management interfaces. Once the abnormal (faulty) condition has been cleared on the equipment
+or termination point for a configured time period, the termination point is declared to be “In-Service”. If the fault condition re-occurs during the time when
+the timer is active, the equipment/termination point transitions to Out-of-Service:AINS state and the valid signal timer is reset to its configured value.
+
+The AINS feature can be applied to various types of termination points depending on the desired applications. One of the highly desired interfaces where
+the AINS needs to be supported is at the boundary (edge point) where the client signal connects to the Infinera network. Within the scope of Infinera
+termination points, this interface boundary is represented by the tributary port, aka Tributary Physical Termination Point (Trib-PTP). Another interface that
+needs to support the AINS feature is at the boundary where the network signal connects to the client. Within the scope of Infinera termination points, this
+interface is represented by the line port, aka Line Physical Termination Point (Line-PTP) or Super Channel Group Physical Termination Point (SCG-PTP).
+These two interface boundaries are shown in the figure below.
+
+Infinera Node
+CPE Transceiver TOM Line Transceiver Network
+Transceive
+Client AINS Boundary Line AINS Boundary
+Bi-Directional Bi-Directional
+Trib-PTP Line-PTP/SCG-PTP
+
+2.2. 2.2. End-To-End Deployment Scenarios
+
+2.2.1. 2.2.1. AINS for Ethernet/OTN Services
+
+‘An end-to-end deployment scenario for the operational use case is shown in the figure below.

@@ -1,0 +1,71 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+TRIB PTP: In-Service
+Client: In-Service
+SNC: In-Service
+
+AINS=Disabled for TRIBPTP,
+
+Client and SNC
+
+EDIT:SNC
+Maintenance
+
+EDIT:SNC
+Unlock
+
+TRIB PTP: AINS
+Client: Out-of-service, SGEO
+SNC: Maintenance
+AINS=Enabled for TRIBPTP
+
+Timer Expires
+or EDIT-TRIB:IS
+
+TRIB PTP: In-Service
+Client: In-Service
+SNC: Maintenance
+AINS=Disabled for TRIBPTP,
+Client and SNC
+
+EDIT-TRIB:AINS Timer Decrementing
+
+Fault on TRIB PTP
+before timer expired
+
+Fault
+Recover
+
+Fault
+
+Fault on TRIB PTP
+Recover
+
+TRIB PTP: Out-of-service,
+Faulted
+Client: Out-of-service, SGEO
+SNC: Maintenance
+AINS=Disabled for TRIBPTP,
+Client and SNC
+
+TRIB PTP: AINS&faulted
+Client: Out-of-service, SGEO
+SNC: Maintenance
+AINS=Enabled for TRIBPTP
+
+EDIT:IS
+
+EDIT-TRIB:AINS
+
+[ GRD-489 - Getting issue details...
+
+STATUS | ] SNC alarms resulting from Path level faults
+
+It is acceptable that the SNC failure alarm be reported at all times (irrespective of corresponding TRIB or Line/SCG being in AINS enabled or disabled
+mode) when there is a path (DTP/ODU) level fault present in any of the path points of the SNC.
+
+The SNC failure alarms resulting from the DTP/ODU-level faults will be useful for debugging the problem in the Infinera network. Note that the only
+exception to the above requirement is ODU-level CSF failure, which is considered as a client failure and is include in the AINS Facility Failure Condition,
+thus masking the SNC fail alarm.
+
+5.3. 5.3. Feature Interaction

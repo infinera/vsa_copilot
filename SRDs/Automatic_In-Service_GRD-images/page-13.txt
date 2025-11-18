@@ -1,0 +1,25 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+© —_ GRD-490 _AINS and Other Feature interaction
+© — GRD-489_ SNC alarms resulting from Path level faults
+© —_GRD-488_ SNC Alarm masking resulting from TRIB/Client or SCG Failures
+© — GRD-487 Path level failures - CTP
+© —_GRD-486 Control Plane failure when fault is outstanding
+© — GRD-485__ Control Plane Failure when VS Timer is active
+© —_GRD-484 Controller Card reset or active switch
+© —_ GRD-483_Cold/Warm reset behavior - Transport equipment containing transceivers/TOMs
+© —_GRD-482_ Warm reset behavior - Chassis equipment hosting transceivers/TOMs
+© —_ GRD-481 Cold reset behavior - Chassis equipment hosting transceivers/TOMs
+© —_GRD-480_ Reset of Valid Signal Timer upon detecting fault
+© —_GRD-479 Alarm Masking when in AINS enabled state
+© —_GRD-478 Facility Failures - Invalid Signal Failures for the Line/SCG AINS feature
+© — GRD-477_ Facility Failures - Invalid Signal Failures for the TRIB AINS feature
+© —_GRD-476 Transition into in-service state upon expiry of VS Timer
+© — GRD-475_No pre-conditions for changing the Valid Signal Time Interval
+© — GRD-474 _No impact to default template when Valid Signal Time Interval is updated on TRIB/SCG
+© GRD-473_No impact to existing AINS Valid Signal Time Interval configuration when default template is
+update
+© — GRD-472_No impact to default template when TRIB/Line/SCG AINS is updated
+° GRD-471 No impact to existing AINS configuration when default template is updated
+
+Showing 20 out of 32 issues

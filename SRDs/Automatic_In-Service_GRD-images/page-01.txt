@@ -1,0 +1,251 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+Automatic In-Service GRD
+
+Issue | Date
+
+10 07 Dee
+2020
+
+141 08Dee
+2020
+
+12 10Dee
+2020
+
+13 18Dee
+2020
+
+14 O1 Feb
+2021
+
+2 04 Mar 2021
+
+2111 Oct 2021
+
+22 27 Oct 2021
+
+23. 10Dec
+2021
+
+24 29.Jun 2022
+
+26 28Aug
+2022
+
+27 O7 Sep
+2022
+
+28 2750p
+2023
+
+29 10Jan 2024
+
+29.2 26 Jan 2024
+
+29.3 06 Jun 2024
+
+pea 11 Feb
+2025
+
+‘owner
+
+‘Aol
+Modanty
+
+‘ot
+Modanty
+
+‘ot
+Modanty
+
+Aol
+Modanty
+‘Aol
+
+Modanty
+
+‘Aeot
+Modantu
+Aeot
+
+Modanty
+
+‘Aol
+Modanty
+
+‘ot
+Modanty
+
+‘ot
+Modantu
+
+‘ot
+Modanty
+
+Reot
+Modantu
+
+Aeot
+Modanty
+
+Reot
+Modantu
+
+Aeot
+Modanty
+
+Reot
+Modantu
+
+Aeot
+Modantu
+
+Table of Contents
+
+ee
+
+eee
+
+1. References
+2. Introduction
+
+Status
+Draft
+
+Draft
+
+jeady for
+
+Ri
+Review
+
+Released
+
+Ready for
+Review
+
+Released
+Draft
+
+Ready for
+Review
+
+Released
+Released
+Ready for
+
+Review
+
+jeady for
+
+Ri
+Review
+
+Ready for
+Review
+
+Ready for
+Review
+
+Ready for
+Review
+Released
+
+Released
+
+Release Remarks
+
+NA
+
+NA
+
+NA
+
+NA
+
+NA
+
+NA
+
+Initial import of existing content from.
+‘Automatic IN Service (AINS) Generic Requirements Specification
+
+Document # 1410-00117
+Department: System Engineering
+Revision #: 1.0,
+
+Revision Date #: Oct 19, 2018
+
+General editing and addition of SCG AINS specications.
+
+Expansion of SCG AINS scenario and specification,
+Fmoved all AINS disabled enabled pre-condiions.
+
+Updated state dlagrams to enable transition from "IS-NR" to “OOS-AU, AINS" when no fault is present.
+Updated SCH CTP "OLOS" to “ALL-CARRIER-FAIL” according to [GX 8915)
+
+eworded failure condition requirements to clarity the role of supporting equipment.
+
+Edited the RemValldSignalTimer range to include “0”. Edited the Trb:PTP AINS text to allow the associated client entity to go either in AINS or alarm
+suppressio
+
+Replaced with the direction attribute in alarms.
+Fo-organized the state diagrams, requirements and tables for consistency and clarity.
+
+Released Content for 1 version.
+Updated AINS input signals on various objects. Added and removed a few defects ta/rom invalid signals for GX applicablty
+
+Updated alarm masking requirements during AINS to include all SANSA alarms and updated the list of example alarms.
+‘Added a reference for AINSIARC definitions.
+
+Updated the GRD-469 to clay the allowed configuration changes between disabled and enabled.
+Updated AINS state machine and clarified the state relationship between supporting/supported managed objects under AINS.
+
+Released the updates after approval by the CCB according to [GX-33439}
+
+Updated the GAD-477 requirement for AINS triggers per [GX-49460} to cover the exception for UCM.
+
+Updated the GRD-479 requirement for TCA inhibition behavior per [GX-55425] to cover the related exception.
+
+‘Added a note to clarity the handling of Controller Card alarms when the Transport Card entities are in AINS per [GX-55302)
+
+Clariied the GRD-481, GRD-482, GRD-483 and GRD-484 requirements to specity the hosting/containing equipment.
+
+Expanded the GRD-477 requirement to include Fiber-Channel-related triggers for upcoming products.
+
+Generalized the descriptions and requirements throughout the document for applicability to various platform designs using Line-PTP and SCG-PTP.
+Updated GRD-477 for FC triggers based on review comments.
+
+Updated the GRD-477 requirement for invalid signal triggers on ODU per [GX- 124336}
+
+Updated the GRD-476 and GRD-478 requirement for invalid signal triggers in CHMT per [GX-199332}
+
+2.1. Automatic In-Service (AINS) Provisioning Overview
+2.2. End-To-End Deployment Scenarios
+
+" 2.2.1. AINS for Ethernet/OTN Services
+
+" 2.2.2. AINS for Ethernet/OTN Adaptation
+
+" 2.2.3. AINS for Line/SCG
+
+3. Operational Impact
+4. User Experience Considerations
+5. AINS Requirements
+
+5.1. Configuration Management
+5.2. Fault Management and State Model
+5.3. Feature Interaction
+
+7. Reviews
+
+7.1, Mandatory Reviewers
+7.2. Jira Requirement Table
+
+1. 1. References
+
+1. GR-1093-CORE Generic State Requirements for Network Elements (NEs), Issue 2 June 2000
+2. ITU-T Recommendation M.3100 - Generic network information model
+
+6. Information Model for the AINS Feature

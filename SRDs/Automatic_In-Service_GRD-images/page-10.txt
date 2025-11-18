@@ -1,0 +1,50 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+[| GRD-484 - Getting issue details... Gt,tys | ] Controller Card reset or active switch
+
+Itis desirable that a node controller card reboot or switch-over shall not trigger the reset of RemValidSignalTimer value to the configured value for
+ValidSignalTimelnterval.
+
+The above objective is desirable to cover the case of not restarting AINS feature all over again when the controller resets or a controller activity switch
+takes place.
+
+[| GRD-485 - Getting issue detalls.../ St ,tyg | ] Control Plane Failure when VS Timer is active
+
+During the time RemValidSignalTimer is active (decrementing) and the control plane connectivity between the tributary module hosting the TOM or the
+line module, and controller module is down, then it is acceptable that the RemValidSignalTimer continues to decrement, and the state transitions are
+carried accordingly.
+
+[| GRD-486 - Getting issue detalls.... cr ,zyg | ] Control Plane failure when fault is outstanding
+
+When AINS is enabled on the TRIB-PTP or Line-PTP/SCG-PTP with any of the outstanding fault specified in GRD-477 and GRD-478, and a control
+plane failure is also present between the tributary module hosting the TOM or the line module and controller module, then it is acceptable that the AINS
+state is held until the control plane is recovered and the fault conditions are re-evaluated accordingly. The following cases shall be handled.
+
+1. When the control plane is recovered and there is no fault present as specified in GRD-477 and GRD-478, then the RemValidSignalTimer starts
+decrementing from the configured value for ValidSignalTimeinterval.
+
+2. When the control plane is recovered and there is any fault present as specified in GRD-477 and GRD-478, then the RemValidSignalTimer is reset
+to the configured value for ValidSignalTimeinterval. No count-down of RemValidSignalTimer occurs in this scenario as there is still a fault present.
+
+[ GRD-487 - Getting issue details... sr,tyg | ] Path level failures - CTP
+
+It is acceptable that the NE do not mask the path level faults (e.g. DTP in DTN and ODU in XTN) when the TRIB-PTP or Line-PTP/SCG-PTP is in the
+AINS enabled state.
+
+Itis expected that the Infinera network-side faults are useful to be reported to isolate the failure inside the Infinera network. The AINS feature is used only
+at the edge point where the tributary/client signals and line signals are monitored for faults during turn up or troubleshooting. Note that the ODU-level CSF
+is considered a client signal failure and is included in the AINS hierarchy.
+
+[| GRD-488 - Getting issue detalls... | cr ,tyg | ] SNC Alarm masking resulting from TRIB/Client or Line/SCG Failures
+
+The NE shall mask the SNC failure alarm which results from the faults specified in GRD-477 and GRD-478, and the corresponding TRIB-PTP or Line-
+PTP/SCG-PTP on which SNC is created is in the AINS enabled state.
+
+There are no separate timers provided for SNCs or Client Termination Points. The timers (both RemValidSignalTimer and ValidSignalTimelnterval) are
+provided only on the TRIB-PTP and Line-PTP/SCG-PTP. If the user wants to check how much time is remaining before SNC or a client termination point
+transition to In-Service state, he/she shall explicitly perform a retrieval operation on the corresponding TRIB-PTP or Line-PTP/SCG-PTP managed object
+where SNC or Client Termination Point resides.
+
+Interaction between Trib-PTP AINS, SNC and Client-CTP states
+
+The following state transition diagram illustrates state transitions that are supported for the AINS states between the Trib-PTP, SNC and Client CTP.

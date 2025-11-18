@@ -1,0 +1,46 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+In-Service+GRD
+
+Protected SNC
+
+OTUk
+
+Node A Node 2 C14: CSF condition
+
+2.2.3. 2.2.3. AINS for Line/SCG
+
+As depicted in the figure below, the deployment scenario shows two network elements, Node A and Node Z, that provide transport services between the
+clients already provisioned on each of the nodes. A critical OLOS alarm arises on the Line-/SCG-PTPs of Node A and Node Z when the optical fiber line
+between the two nodes is disconnected. The NOC generates a trouble ticket and dispatches the field operations crew for investigation and repair. The goal
+is to ensure the fault is isolated and the recovery of services will be automatic after the issue is resolved.
+
+TRIB AINS TRIB AINS
+SNC
+
+xGBE
+
+e ron Xe 1@
+OLoSs od OLOS 2@
+
+3@
+
+Line/SCG AINS Enabled Line/SCG AINS Enabled Node Z
+
+In order to achieve this goal, the operator simply configures the Line/SCG port into AINS mode, at both Node A and Node Z. If the OLOS alarm continues
+to exist during the repair, then it will be masked. Thus, the network does not show up such alarms during the repair time, also known as Valid Signal Timer,
+which is configurable by the user. When the fault conditions (OLOS) are handled and fixed, and the timer expires without detecting any OLOS faults, the
+Line/SCG ports at Node A and Node Z are bought into service automatically. At this point, the normal alarm reporting is resumed on the Line/SCG ports of
+both nodes.
+
+3. 3. Operational Impact
+
+The following items describe the importance of this feature in providing operational benefits for our customers.
+
+1. Alarms reported, when they are not supposed to, cause operational personnel additional burden, cause NOC teams to unnecessarily spend time
+and effort in handling trouble tickets.
+2. False alarms cause considerable cost, time and effort towards operational expenses for our customers.
+3. Extraneous alarms become visible everywhere in the network. Different operational personnel (other than service turn-up staff) monitoring alarms
+in the network, get unnecessary trouble tickets.
+4. Differentiating between true alarms vs false alarms becomes non-trivial when co-relating the alarms network-wide, between the Node A and Node
+Zz.
+
+4. 4. User Experience Considerations

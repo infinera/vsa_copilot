@@ -1,0 +1,62 @@
+https://confluence.infinera.com/display/GXCONF/Automatic+|n-Service+GRD
+
+A
+
+@) Plugin TOM
+
+Valid signal oo.
+Invalid signal
+
+Valid signal
+
+AS=UnLocked AS=UnLocked
+
+OS=Enabled OS=Disabled
+AINS=Enabled Invalid rl AINS=Enabled
+(OOS-AU, AINS) nvalic'signa (OOS-AU, FAF&AINS)
+
+Alarm reporting is Disabled
+Timer value does not decrement
+
+Alarm reporting is disabled
+Timer starts decrementing
+
+Timer Expires EDIT:IS
+
+EDIT:AINS EDIT:AINS
+
+Fault AS=UnLocked
+
+AS=UnLocked
+
+OS= bled Recover OS=Disabled
+= Enadie OpStateQualifier=Faulted
+AINS=Disabled AINS=Disabled
+(IS-NR)
+
+(OOS-AU, FAF)
+Alarm reporting is Enabled
+Timer is not applicable
+
+Alarm reporting is Enabled
+Timer reset to its configured value
+
+[ GRD-480 - Getting issue details..." St,tys | ] Reset of Valid Signal Timer upon detecting fault
+
+During the time RemValidSignalTimer is active (decrementing), If any of the faults as specified in GRD-477 or GRD-478 is detected by the NE, the
+Rem\ValidSignalTimer value shall be reset to the configured value for ValidSignalTimeinterval.
+
+[| GRD-481 - Getting issue details... cratyg | |] Cold reset behavior - Chassis equipment hosting transceivers/TOMs
+
+It is acceptable that a cold reset of the associated chassis controller card equipment resets the RemValidSignalTimer value to the configured value for
+ValidSignalTimeinterval.
+
+[| GRD-482 - Getting issue details... sr,tyg | ] Warm reset behavior - Chassis equipment hosting transceivers/TOMs
+
+During the time RemValidSignalTimer is active (decrementing), it is acceptable that a warm reset of the associated chassis controller card equipment
+continues to decrement the Rem\ValidSignalTimer value.
+
+[ GRD-483 - Getting issue details... ¢r,tyg | ] Cold/Warm reset behavior - Transport equipment containing transceivers/TOMs
+
+During the time RemValidSignalTimer is active (decrementing), it is acceptable that a cold/warm reset of the associated transport card resets the
+Rem\ValidSignalTimer value to the configured value for ValidSignalTimelnterval.
