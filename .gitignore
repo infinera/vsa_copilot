@@ -24,3 +24,6 @@ tmp/
 
 # Tools
 tools/*.log
+
+# Virtual environment
+.venv/
