@@ -18,7 +18,7 @@ Templates (agent-local preferred):
 - PRD: `.github/agents/vsa/templates/PRD.md` (or `PRD/PRD-template.md`).
 - SRD: `.github/agents/vsa/templates/SRD.md` (or `SRDs/SRD-template.md`).
 - TestPlan: `.github/agents/vsa/templates/TESTPLAN.md` (or `TestPlan/README.md`).
-- API skeleton: `.github/agents/vta/templates/openapi-template.yaml` (or `APIs/openapi-template.yaml`).
+- API skeleton: `.github/agents/vta/templates/openapi-template.yaml` (or `APIs/openapi.yaml`).
 
 ID conventions (use exact formats):
 - Functional requirements: `FR-<FeatureCode>-NNN` (e.g., `FR-QS-001`).
