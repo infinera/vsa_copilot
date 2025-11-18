@@ -24,6 +24,10 @@ try:
 except Exception:
     pytesseract = None
 
+import shutil
+import subprocess
+import sys
+
 def ensure_dir(path):
     if not os.path.exists(path):
         os.makedirs(path, exist_ok=True)
@@ -31,6 +35,9 @@ def ensure_dir(path):
 def save_image(image, path):
     with open(path, 'wb') as f:
         f.write(image.blob)
+
+def check_tesseract_available():
+    return pytesseract is not None and shutil.which('tesseract') is not None
 
 def extract_slide_text(slide):
     texts = []
@@ -99,13 +106,18 @@ def main():
                 rel_path = os.path.relpath(img_path, os.path.dirname(os.path.abspath(args.out)) or '.')
                 md_lines.append(f'![{img_name}]({rel_path})\n')
                 # OCR if requested
-                if args.ocr and pytesseract is not None and Image is not None:
-                    try:
-                        ocr_text = pytesseract.image_to_string(Image.open(img_path))
-                        if ocr_text.strip():
-                            md_lines.append('> OCR: ' + ocr_text.strip().replace('\n', ' ') + '\n')
-                    except Exception as e:
-                        md_lines.append(f'> OCR failed: {e}\n')
+                if args.ocr:
+                    if not Image or not pytesseract:
+                        md_lines.append('> OCR skipped: Pillow or pytesseract not installed\n')
+                    elif not check_tesseract_available():
+                        md_lines.append('> OCR skipped: tesseract executable not found in PATH\n')
+                    else:
+                        try:
+                            ocr_text = pytesseract.image_to_string(Image.open(img_path))
+                            if ocr_text.strip():
+                                md_lines.append('> OCR: ' + ocr_text.strip().replace('\n', ' ') + '\n')
+                        except Exception as e:
+                            md_lines.append(f'> OCR failed: {e}\n')
 
         notes = extract_notes(slide)
         if notes:

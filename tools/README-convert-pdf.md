@@ -26,4 +26,7 @@ Usage
 
 ```bash
 python tools/convert_pdf_to_md.py path/to/doc.pdf --out doc.md
+
+# With OCR (requires `pdftoppm` from poppler and `tesseract`):
+python tools/convert_pdf_to_md.py path/to/doc.pdf --out doc.md --ocr --images-dir images
 ```

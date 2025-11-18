@@ -15,10 +15,10 @@ install: venv
 	$(PIP) install -r tools/requirements.txt
 
 convert-pdf:
-	$(PY) tools/convert_pdf_to_md.py $(FILE) --out $(OUT)
+	$(PY) tools/convert_pdf_to_md.py $(FILE) --out $(OUT) $(OCR_FLAG)
 
 convert-pptx:
-	$(PY) tools/convert_pptx_zip_to_md.py $(FILE) --out $(OUT) --images-dir $(IMGDIR)
+	$(PY) tools/convert_pptx_zip_to_md.py $(FILE) --out $(OUT) --images-dir $(IMGDIR) $(OCR_FLAG)
 
 clean:
 	rm -rf $(VENV)
