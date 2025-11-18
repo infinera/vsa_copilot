@@ -2,57 +2,15 @@
 
 ## GX – SW
 
-Upgrade CFD 
+Upgrade CFD
 Analysis
 Akshay Kumar Behki
 SwRRT
 June 10, 2025
 
-![image3.png](images/image3.png)
-
-![image2.svg](images/image2.svg)
-
-![image1.png](images/image1.png)
-
-![image4.svg](images/image4.svg)
-
-![image17.svg](images/image17.svg)
-
-![image18.jpeg](images/image18.jpeg)
-
-![image15.jpeg](images/image15.jpeg)
-
-![image14.png](images/image14.png)
-
-![image20.svg](images/image20.svg)
-
-![image10.jpeg](images/image10.jpeg)
-
-![image19.png](images/image19.png)
-
-![image13.jpeg](images/image13.jpeg)
-
-![image12.svg](images/image12.svg)
-
-![image11.png](images/image11.png)
-
-![image16.png](images/image16.png)
-
-![image9.jpeg](images/image9.jpeg)
-
-![image8.jpeg](images/image8.jpeg)
-
-![image7.svg](images/image7.svg)
-
-![image6.png](images/image6.png)
-
-![image5.jpeg](images/image5.jpeg)
-
-
 **Notes:**
 
 21
-
 
 ---
 
@@ -80,164 +38,33 @@ Development:
 UT tests to check what happens and how to handle when lower layers fail like DCO.
 Test:
 Reboots/Failures at different phases of upgrades needs to be simulated and tested.
-Instrument the failure during the upgrades of components (ex: DCO by deleting /
-tmp
-/firmware) to make sure it’s NSA.
-
-![image3.png](images/image3.png)
-
-![image2.svg](images/image2.svg)
-
-![image1.png](images/image1.png)
-
-![image4.svg](images/image4.svg)
-
-![image17.svg](images/image17.svg)
-
-![image18.jpeg](images/image18.jpeg)
-
-![image15.jpeg](images/image15.jpeg)
-
-![image14.png](images/image14.png)
-
-![image20.svg](images/image20.svg)
-
-![image10.jpeg](images/image10.jpeg)
-
-![image19.png](images/image19.png)
-
-![image13.jpeg](images/image13.jpeg)
-
-![image12.svg](images/image12.svg)
-
-![image11.png](images/image11.png)
-
-![image16.png](images/image16.png)
-
-![image9.jpeg](images/image9.jpeg)
-
-![image8.jpeg](images/image8.jpeg)
-
-![image7.svg](images/image7.svg)
-
-![image6.png](images/image6.png)
-
-![image5.jpeg](images/image5.jpeg)
-
+	Instrument the failure during the upgrades of components (ex: DCO by deleting /
+	tmp/firmware) to make sure it’s NSA.
 
 **Notes:**
 
 22
 
-
 ---
 
-## Molex Vendor GRPC hardening.
+Molex Vendor GRPC hardening.
 
 Basil/Kapil and we should check what happens inside FW.
 
-![image3.png](images/image3.png)
-
-![image2.svg](images/image2.svg)
-
-![image1.png](images/image1.png)
-
-![image4.svg](images/image4.svg)
-
-![image17.svg](images/image17.svg)
-
-![image18.jpeg](images/image18.jpeg)
-
-![image15.jpeg](images/image15.jpeg)
-
-![image14.png](images/image14.png)
-
-![image20.svg](images/image20.svg)
-
-![image10.jpeg](images/image10.jpeg)
-
-![image19.png](images/image19.png)
-
-![image13.jpeg](images/image13.jpeg)
-
-![image12.svg](images/image12.svg)
-
-![image11.png](images/image11.png)
-
-![image16.png](images/image16.png)
-
-![image9.jpeg](images/image9.jpeg)
-
-![image8.jpeg](images/image8.jpeg)
-
-![image7.svg](images/image7.svg)
-
-![image6.png](images/image6.png)
-
-![image5.jpeg](images/image5.jpeg)
-
-
 ---
 
-## MoMs
+MoMs
 
 : 6/27:
 The NRs and SVT repro "no" which can be checked:
 GX-175382
-: Dev RCA: 
-NXP version upgrade successful after first cold boot. But FW update was not sent to 
-eqm
-. 2nd reboot showed upgrade failure. 3rd reboot finally had successful upgrade which updated 
-eqm
- and traffic came up. NXP logs are missing. Due to no logs can't debug issue further.
+: Dev RCA:
+NXP version upgrade successful after first cold boot. But FW update was not sent to eqm. 2nd reboot showed upgrade failure. 3rd reboot finally had successful upgrade which updated eqm and traffic came up. NXP logs are missing. Due to no logs can't debug issue further.
 GX-171860
-:Dev RCA: This issue is not reproducible locally. We analyzed the logs and couldn't root cause the exact reason for gecko watchdog. On other hand 
-GX-73268
- fixes a watchdog issue in DCO-Gecko with version 1.59. This new version is present in R6.1.5-70. Also we added more logs to catch any failure conditions.
+: Dev RCA: This issue is not reproducible locally. We analyzed the logs and couldn't root cause the exact reason for gecko watchdog. On other hand GX-73268 fixes a watchdog issue in DCO-Gecko with version 1.59. This new version is present in R6.1.5-70. Also we added more logs to catch any failure conditions.
 GX-171832
 : It appears there is a race condition in NXP where partition sync might occur after the upgrade application stage. Although the probability is low, it happened in this instance. Unlike CHM6, NXP has a different approach to partition sync, performing periodic checks every 15 minutes. A cold boot of CHM6 has done the right grade for NXP and upgraded the NXP. We will fix the race condition in R8.0
-									continued…
-
-![image3.png](images/image3.png)
-
-![image2.svg](images/image2.svg)
-
-![image1.png](images/image1.png)
-
-![image4.svg](images/image4.svg)
-
-![image17.svg](images/image17.svg)
-
-![image18.jpeg](images/image18.jpeg)
-
-![image15.jpeg](images/image15.jpeg)
-
-![image14.png](images/image14.png)
-
-![image20.svg](images/image20.svg)
-
-![image10.jpeg](images/image10.jpeg)
-
-![image19.png](images/image19.png)
-
-![image13.jpeg](images/image13.jpeg)
-
-![image12.svg](images/image12.svg)
-
-![image11.png](images/image11.png)
-
-![image16.png](images/image16.png)
-
-![image9.jpeg](images/image9.jpeg)
-
-![image8.jpeg](images/image8.jpeg)
-
-![image7.svg](images/image7.svg)
-
-![image6.png](images/image6.png)
-
-![image5.jpeg](images/image5.jpeg)
-
+continued…
 
 ---
 
@@ -270,45 +97,25 @@ GX-132074
 RCA'ed
  and the issue was with our vendor.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -339,45 +146,25 @@ GX-154468
 : WD reset due to low mem.
 								continued…
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -402,45 +189,25 @@ Blr
  server)
 							continued…
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -494,45 +261,25 @@ sw
 -version update on CHM6
 							continued…
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -557,45 +304,25 @@ GX-137280: Why does it cause any issue for
 sw
 -version update ? what is the expectation  ?
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -621,90 +348,50 @@ hw
  components.
 A release upgrade matrix that's too complex to execute, because we have many in field versions.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
 
 ## Backup Data
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -723,45 +410,25 @@ In total
 related to SW upgrade were reported in 2024, out of which 18 cut through as per their reproducibility probability or at least help us characterize and document expected behaviors.
 Each slide caters to one area which can be classified as improvement with corresponding CFD links.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -773,45 +440,25 @@ Internal links/HW (I2C, PCIe) failure detections.
 Granular Upgradability.
 Dynamic pre-upgrade scripting.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -841,45 +488,25 @@ Please Check SRD for what we plan here, I hope it is matching expectations.
 Dynamic pre-upgrade scripting
 As each script must be signed and we need to keep track what is installed on a node, all scripts are part of a release package with a unique number, I think we disused this in length.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -913,90 +540,50 @@ additonal
 Packaging issues, Files/binaries, CLs missing/broken.​
 This is a request against our release process.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
 
 ## End frame
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -1020,45 +607,25 @@ Amazon openly criticize Nokia, for the lack of developing comprehensive test pla
 network as test bed to 
 RCA all the issues.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -1084,45 +651,25 @@ GX-69571
 .
 Meta will start next SW upgrades from R6.1.6 to R6.1.8 in coming weeks and we will see how the upgrade will go this time, but we are not very optimistic unfortunately.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -1164,45 +711,25 @@ Test:
 Need a release-on-release matrix to measure these (continuous).
 Carry out upgrades with such stressed situations.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -1227,45 +754,25 @@ All
 enum
  checks as regression with validation for success.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -1286,45 +793,25 @@ Development:
 Characterize CPU limits by stressing each CPU separately in UT.
 Demarcate each CPU failure and implement auto-recovery (watchdogs)/alarming.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -1347,45 +834,25 @@ Need a release-on-release matrix to measure these (continuous).
 Test specifically on cards which have low memory/RAM and less CPU specifications as NCs.
 Carry out upgrades with such stressed situations.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
@@ -1412,45 +879,25 @@ Negative scenarios while upgrade testing (ex: disconnect SCs between different u
 Try to delete some packages manually and see if PFU fails and can it be auto recovered.
 Make sure before closing any Duplicate, the fix CL is ported to the correct target release.
 
-![image3.png](images/image3.png)
 
-![image2.svg](images/image2.svg)
 
-![image1.png](images/image1.png)
 
-![image4.svg](images/image4.svg)
 
-![image17.svg](images/image17.svg)
 
-![image18.jpeg](images/image18.jpeg)
 
-![image15.jpeg](images/image15.jpeg)
 
-![image14.png](images/image14.png)
 
-![image20.svg](images/image20.svg)
 
-![image10.jpeg](images/image10.jpeg)
 
-![image19.png](images/image19.png)
 
-![image13.jpeg](images/image13.jpeg)
 
-![image12.svg](images/image12.svg)
 
-![image11.png](images/image11.png)
 
-![image16.png](images/image16.png)
 
-![image9.jpeg](images/image9.jpeg)
 
-![image8.jpeg](images/image8.jpeg)
 
-![image7.svg](images/image7.svg)
 
-![image6.png](images/image6.png)
 
-![image5.jpeg](images/image5.jpeg)
 
 
 ---
